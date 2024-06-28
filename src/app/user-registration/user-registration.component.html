@@ -1,0 +1,36 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+<div class="container-sm mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 card" style="background: #86cfda">
+        <div class="card-body">
+      <h2 class="text-center mb-4">Sign Up</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        
+        <div class="d-grid gap-2 col-10 mx-auto mb-4">
+          <label for="name" class="form-label">Name:</label>
+          <input id="name" formControlName="name" type="text" class="form-control">
+        </div>
+        <div class="d-grid gap-2 col-10 mx-auto mb-4">
+          <label for="email" class="form-label">Email:</label>
+          <input id="email" formControlName="email" type="email" class="form-control">
+        </div>
+        <div class="d-grid gap-2 col-10 mx-auto mb-4">
+          <label for="password" class="form-label">Password:</label>
+          <div class="input-group">
+            <input id="password" formControlName="password" [type]="hidePassword ? 'password' : 'text'"
+              class="form-control">
+            <button class="btn btn-secondary" type="button" (click)="togglePasswordVisibility()">
+              <i [class]="hidePassword ? 'bi bi-eye' : 'bi bi-eye-slash'"></i>
+            </button>
+          </div>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto mb-4">
+          <button type="submit" class="btn btn-primary btn-lg">Register</button><br>
+          <a type="link" class="btn btn-link" (click)="goToLogin()">Login</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+</div>
